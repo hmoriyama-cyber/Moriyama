@@ -1,0 +1,614 @@
+<title>中国ビジネス作法帖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Noto+Sans+SC:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#EFF2F1;
+    --surface:#FAFBFA;
+    --ink:#141C24;
+    --ink-soft:#4A565F;
+    --ink-faint:#7A858C;
+    --rule:#CBD3D3;
+    --rule-soft:#DFE4E3;
+    --cobalt:#1E4B8F;
+    --cobalt-wash:#E2E9F3;
+    --celadon:#3F7A63;
+    --seal:#A62B24;
+    --seal-wash:#F4E5E3;
+    --shadow:rgba(20,28,36,.10);
+    --display:"Shippori Mincho B1",'Hiragino Mincho ProN','Yu Mincho',serif;
+    --body:"Zen Kaku Gothic New",'Hiragino Sans','Yu Gothic',system-ui,sans-serif;
+    --han:"Noto Sans SC","Zen Kaku Gothic New",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#0F151A;
+      --surface:#161E25;
+      --ink:#E4E9E8;
+      --ink-soft:#A9B4B8;
+      --ink-faint:#7E8A8F;
+      --rule:#2C3841;
+      --rule-soft:#232D35;
+      --cobalt:#84AEE8;
+      --cobalt-wash:#1A2838;
+      --celadon:#79C0A2;
+      --seal:#E2837A;
+      --seal-wash:#2E1E1D;
+      --shadow:rgba(0,0,0,.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#0F151A;
+    --surface:#161E25;
+    --ink:#E4E9E8;
+    --ink-soft:#A9B4B8;
+    --ink-faint:#7E8A8F;
+    --rule:#2C3841;
+    --rule-soft:#232D35;
+    --cobalt:#84AEE8;
+    --cobalt-wash:#1A2838;
+    --celadon:#79C0A2;
+    --seal:#E2837A;
+    --seal-wash:#2E1E1D;
+    --shadow:rgba(0,0,0,.45);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding-inline:22px;
+    padding-block:0 72px;
+  }
+  p{margin:0}
+  .zh{font-family:var(--han);font-weight:500}
+  .py{font-family:var(--body);font-style:italic;color:var(--ink-faint);font-size:.86em;letter-spacing:.02em}
+
+  /* ---- masthead ---- */
+  header.masthead{
+    border-bottom:1px solid var(--rule);
+    padding-block:56px 34px;
+    margin-bottom:44px;
+  }
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.22em;
+    color:var(--cobalt);
+    font-weight:700;
+    margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(34px,7vw,52px);
+    line-height:1.24;
+    letter-spacing:.04em;
+    margin:0 0 8px;
+    text-wrap:balance;
+  }
+  .subtitle{
+    font-family:var(--han);
+    font-size:15px;
+    letter-spacing:.14em;
+    color:var(--ink-faint);
+    margin-bottom:26px;
+  }
+  .lede{
+    font-size:16.5px;
+    color:var(--ink-soft);
+    max-width:62ch;
+  }
+  .lede + .lede{margin-top:14px}
+  .lede strong{color:var(--ink);font-weight:700}
+
+  /* ---- sections ---- */
+  section{margin-bottom:54px;scroll-margin-top:20px}
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:10px;
+    margin-bottom:26px;
+    flex-wrap:wrap;
+  }
+  .sec-head h2{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:25px;
+    letter-spacing:.05em;
+    margin:0;
+  }
+  .sec-head .zh-tag{
+    font-family:var(--han);
+    font-size:12.5px;
+    color:var(--ink-faint);
+    letter-spacing:.1em;
+  }
+  h3{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:.03em;
+    margin:32px 0 12px;
+    color:var(--ink);
+  }
+  h3:first-of-type{margin-top:0}
+
+  /* ---- concept list ---- */
+  .concepts{
+    display:grid;
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+  }
+  .concept{
+    background:var(--surface);
+    padding:20px 22px;
+    display:grid;
+    grid-template-columns:132px 1fr;
+    gap:6px 24px;
+    align-items:baseline;
+  }
+  .concept .term{
+    font-family:var(--han);
+    font-size:21px;
+    font-weight:500;
+    color:var(--cobalt);
+    line-height:1.4;
+  }
+  .concept .term .py{display:block;font-size:12px;margin-top:2px}
+  .concept .body{font-size:15px;color:var(--ink-soft)}
+  .concept .body b{color:var(--ink);font-weight:700}
+  @media (max-width:560px){
+    .concept{grid-template-columns:1fr;gap:8px}
+  }
+
+  /* ---- plain rules list ---- */
+  ul.rules{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+  ul.rules li{
+    padding-left:20px;
+    position:relative;
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  ul.rules li::before{
+    content:"";
+    position:absolute;
+    left:0;top:.72em;
+    width:7px;height:7px;
+    border:1px solid var(--cobalt);
+    background:transparent;
+    transform:rotate(45deg);
+  }
+  ul.rules li b{color:var(--ink);font-weight:700}
+  ul.rules li .note{display:block;color:var(--ink-faint);font-size:13.5px;margin-top:2px}
+
+  /* ---- tables ---- */
+  .table-scroll{overflow-x:auto;margin:0 -2px}
+  table{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14.5px;
+    min-width:420px;
+  }
+  caption{
+    text-align:left;
+    font-size:12px;
+    letter-spacing:.14em;
+    color:var(--ink-faint);
+    padding-bottom:8px;
+  }
+  th{
+    text-align:left;
+    font-weight:700;
+    font-size:12px;
+    letter-spacing:.12em;
+    color:var(--ink-faint);
+    border-bottom:1px solid var(--rule);
+    padding:0 14px 8px 0;
+    white-space:nowrap;
+  }
+  td{
+    padding:11px 14px 11px 0;
+    border-bottom:1px solid var(--rule-soft);
+    vertical-align:top;
+    color:var(--ink-soft);
+  }
+  td:first-child{color:var(--ink)}
+  td.term-cell{font-family:var(--han);font-weight:500;white-space:nowrap}
+  td.term-cell .py{display:block;font-family:var(--body);font-size:12px}
+  .num{font-variant-numeric:tabular-nums;white-space:nowrap}
+
+  /* ---- figure / seating ---- */
+  figure{margin:0}
+  .seating-wrap{
+    background:var(--surface);
+    border:1px solid var(--rule-soft);
+    padding:24px 18px 18px;
+    box-shadow:0 1px 2px var(--shadow);
+  }
+  .seating{
+    display:block;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    color:var(--ink-soft);
+  }
+  .seat rect{fill:var(--surface);stroke:var(--rule);stroke-width:1}
+  .seat text{fill:var(--ink-soft);font-family:var(--body);font-weight:500}
+  .seat.key rect{fill:var(--cobalt-wash);stroke:var(--cobalt);stroke-width:1.4}
+  .seat.key text{fill:var(--cobalt);font-weight:700}
+  .tabletop{fill:none;stroke:var(--rule);stroke-width:1.2}
+  .lazy{fill:none;stroke:var(--rule);stroke-width:1;stroke-dasharray:4 4}
+  .spin{fill:none;stroke:var(--ink-faint);stroke-width:1.2}
+  .svg-han{fill:var(--ink-faint);font-family:var(--han)}
+  .svg-label{fill:var(--ink-faint);font-family:var(--body)}
+  .svg-note{fill:var(--cobalt);font-family:var(--body);font-weight:700}
+  .wall{stroke:var(--rule);stroke-width:2;fill:none}
+  figcaption{
+    font-size:13px;
+    color:var(--ink-faint);
+    margin-top:14px;
+    line-height:1.75;
+  }
+  figcaption b{color:var(--ink-soft)}
+
+  /* ---- taboo blocks ---- */
+  .taboo{
+    border-left:3px solid var(--seal);
+    background:var(--seal-wash);
+    padding:16px 18px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .taboo .t-label{
+    font-size:11.5px;
+    letter-spacing:.2em;
+    color:var(--seal);
+    font-weight:700;
+  }
+  .taboo ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .taboo li{font-size:14.5px;color:var(--ink-soft)}
+  .taboo li b{color:var(--ink);font-weight:700}
+  .taboo .zh{color:var(--seal)}
+
+  .good{
+    border-left:3px solid var(--celadon);
+    padding:14px 0 14px 18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .good .t-label{
+    display:block;
+    font-size:11.5px;
+    letter-spacing:.2em;
+    color:var(--celadon);
+    font-weight:700;
+    margin-bottom:8px;
+  }
+
+  .callout{
+    border:1px solid var(--rule);
+    background:var(--surface);
+    padding:18px 20px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .callout b{color:var(--ink)}
+
+  .stack{display:flex;flex-direction:column;gap:22px}
+
+  /* ---- checklist ---- */
+  ol.checklist{
+    list-style:none;
+    margin:0;padding:0;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:1px;
+    background:var(--rule-soft);
+    border:1px solid var(--rule-soft);
+  }
+  ol.checklist li{
+    background:var(--surface);
+    padding:16px 18px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+  }
+  ol.checklist li::before{
+    content:"";
+    flex:0 0 auto;
+    width:13px;height:13px;
+    margin-top:.45em;
+    border:1.4px solid var(--cobalt);
+  }
+  ol.checklist li b{display:block;color:var(--ink);font-weight:700;margin-bottom:2px}
+
+  footer{
+    border-top:1px solid var(--rule);
+    margin-top:8px;
+    padding-top:22px;
+    font-size:12.5px;
+    color:var(--ink-faint);
+    line-height:1.8;
+  }
+</style>
+
+<div class="wrap">
+
+<header class="masthead">
+  <div class="eyebrow">出張・商談のための実務メモ</div>
+  <h1>中国ビジネス作法帖</h1>
+  <div class="subtitle zh">中国商务礼仪 · 实务笔记</div>
+  <p class="lede">作法の重さは相手によって大きく変わる。<strong>国有企業と民営企業、北京と深圳、50代の総経理と30代の事業部長</strong>では、同じ場面でも期待される振る舞いが違う。ここでは、初めて中国側と商談・会食をする日本側担当者が「最低限外さない」ための型をまとめた。</p>
+  <p class="lede">前提としてひとつ。2012年末の<span class="zh">八项规定</span>（八項規定＝党・政府幹部の綱紀粛正）以降、公務員や国有企業の宴席・贈答は目に見えて簡素になった。バブル期の接待像をそのまま持ち込むと、歓迎されるどころか相手を困らせる。</p>
+</header>
+
+<section id="foundation">
+  <div class="sec-head">
+    <h2>一　三つの土台</h2>
+    <span class="zh-tag">面子 · 关系 · 人情</span>
+  </div>
+  <div class="concepts">
+    <div class="concept">
+      <div class="term zh">面子<span class="py">miànzi</span></div>
+      <div class="body">人前で恥をかかせない。<b>反論・訂正・値下げ要求は、公開の場ではなく一対一で</b>。逆に、相手の肩書と実績を人前で持ち上げるのは、こちらのコストがほぼゼロで最も効く投資になる。部下の面前で相手の担当者を詰めた瞬間、その案件は動かなくなると考えてよい。</div>
+    </div>
+    <div class="concept">
+      <div class="term zh">关系<span class="py">guānxi</span></div>
+      <div class="body">取引は「会社対会社」の前に「人対人」。担当者が異動・転職すると関係が事実上ゼロに戻ることがあるため、<b>相手組織に複数の線を持つ</b>。紹介者（介绍人）を通じて入ると初速がまるで違う。</div>
+    </div>
+    <div class="concept">
+      <div class="term zh">人情<span class="py">rénqíng</span></div>
+      <div class="body">受けた便宜は貸し借りとして長く記憶される。小さな頼まれ事（日本での買い物、子どもの留学相談）を断り続けると、関係の口座残高が静かに減っていく。返礼は同額でなく<b>「相手が困っている時に返す」</b>のが型。</div>
+    </div>
+    <div class="concept">
+      <div class="term zh">序列<span class="py">xùliè</span></div>
+      <div class="body">誰が決めるかと同じくらい、<b>誰が「決めた」と見せられるかが重要</b>。席次、入室順、発言順、名刺交換の順序はすべて序列の表示装置であり、日本側が自社の序列を崩すと相手を混乱させる。</div>
+    </div>
+  </div>
+</section>
+
+<section id="first-meeting">
+  <div class="sec-head">
+    <h2>二　初対面</h2>
+    <span class="zh-tag">握手 · 名片 · 称呼</span>
+  </div>
+  <ul class="rules">
+    <li><b>握手は軽く、2〜3秒。</b>目上・年長者・主催者側が先に手を出すのを待つ。強く握る必要も、目を逸らす必要もない。お辞儀はしてもよいが、返ってくるのは握手。</li>
+    <li><b>名刺（<span class="zh">名片</span>）は必ず両手で、相手から読める向きに。</b>受け取ったら声に出して肩書を読み、その場でしまわず机上に相手の席順どおり並べる。片手渡し、受け取った名刺へのその場での書き込みは避ける。裏面に簡体字の中国語表記があると、肩書＝序列が一目で伝わる。</li>
+    <li><b>呼称は「姓＋役職」が基本。</b>下の名前で呼ぶのは相当親しくなってから。<span class="note">日本語の「◯◯さん」に当たる汎用敬称がないため、役職を外すと逆に距離ができる。</span></li>
+    <li><b>連絡先は微信（WeChat）。</b>名刺交換の直後にQRコードで繋ぐのが実質の標準で、メールは返信が遅い。会社支給端末のポリシーだけは事前に確認しておく。</li>
+  </ul>
+
+  <h3>呼びかけの型</h3>
+  <div class="table-scroll">
+    <table>
+      <caption>相手の肩書が分からないときは「総」を使うより、名刺を確認してから呼ぶ</caption>
+      <thead>
+        <tr><th>呼び方</th><th>読み</th><th>対象</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="term-cell zh">张总</td><td class="py">Zhāng zǒng</td><td>社長・総経理クラス。最も無難で、やや上げ気味に使われる</td></tr>
+        <tr><td class="term-cell zh">王经理</td><td class="py">Wáng jīnglǐ</td><td>部長・マネージャー</td></tr>
+        <tr><td class="term-cell zh">李工</td><td class="py">Lǐ gōng</td><td>技術者（<span class="zh">工程师</span>）。技術部門では敬意のこもった呼び方</td></tr>
+        <tr><td class="term-cell zh">刘老师</td><td class="py">Liú lǎoshī</td><td>教員・研究者・師と仰ぐ専門家</td></tr>
+        <tr><td class="term-cell zh">陈女士</td><td class="py">Chén nǚshì</td><td>硬い場面での女性への敬称。日常は役職呼びが普通</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="negotiation">
+  <div class="sec-head">
+    <h2>三　商談の進め方</h2>
+    <span class="zh-tag">谈判 · 会议</span>
+  </div>
+  <ul class="rules">
+    <li><b>入室・着席・退室は序列順。</b>日本側も自社の序列を崩さない。会議室では入口から遠い側が客側、その中央が主席、通訳は主席の斜め後ろ。</li>
+    <li><b>冒頭の雑談（<span class="zh">寒暄</span>）を省かない。</b>移動・天気・食事・家族。本題に入るタイミングは、相手の最上位者が作る。</li>
+    <li><b>「<span class="zh">研究一下</span>」「<span class="zh">考虑考虑</span>」＝検討します、は多くの場合ノー。</b>あるいは上位の決裁が必要というサイン。その場で詰めず、後日、担当者個人にWeChatで温度を確認する。</li>
+    <li><b>決裁者が同席しているとは限らない。</b>早い段階で「<span class="zh">谁做决定？</span>（誰が決めるのか）」の構造を把握する。同席者の中で最も発言が少ない人物が決裁者ということも珍しくない。</li>
+    <li><b>価格交渉は最後まで動く。</b>調印後の追加要求も起こりうる。合意事項はその都度、書面（<span class="zh">会议纪要</span>＝議事録）で確認し、サインを取る。</li>
+    <li><b>通訳は自分の側で手配する。</b>1文を短く、ことわざ・社内用語・二重否定を避ける。通訳ではなく相手の目を見て話す。事前に用語集と落としどころを共有しておく。</li>
+    <li><b>沈黙を埋めない。</b>相手が黙るのは拒否ではなく検討か、上位者の発言待ちのことが多い。慌てて譲歩条件を足すのは最も高くつく。</li>
+  </ul>
+</section>
+
+<section id="banquet">
+  <div class="sec-head">
+    <h2>四　会食（宴席）</h2>
+    <span class="zh-tag">宴请 · 座次</span>
+  </div>
+
+  <figure class="seating-wrap">
+    <svg class="seating" viewBox="0 0 560 470" role="img" aria-label="円卓の席次図。入口から最も遠い正面が主人の主位、その右隣が主賓、真向かいの入口側が副主人。">
+      <!-- table -->
+      <circle class="tabletop" cx="280" cy="200" r="95"></circle>
+      <circle class="lazy" cx="280" cy="200" r="56"></circle>
+      <text class="svg-han" x="280" y="196" text-anchor="middle" font-size="12">转盘</text>
+      <text class="svg-label" x="280" y="213" text-anchor="middle" font-size="11">料理は時計回り</text>
+      <path class="spin" d="M 280 132 A 68 68 0 0 1 344 178"></path>
+      <polygon points="346,181 335,180 341,170" fill="var(--ink-faint)"></polygon>
+
+      <!-- seats -->
+      <g class="seat key">
+        <rect x="232" y="38" width="96" height="34" rx="2"></rect>
+        <text x="280" y="60" text-anchor="middle" font-size="13">主人（主位）</text>
+      </g>
+      <g class="seat key">
+        <rect x="98" y="81" width="96" height="34" rx="2"></rect>
+        <text x="146" y="103" text-anchor="middle" font-size="13">主賓 ①</text>
+      </g>
+      <g class="seat">
+        <rect x="366" y="81" width="96" height="34" rx="2"></rect>
+        <text x="414" y="103" text-anchor="middle" font-size="13">次賓 ②</text>
+      </g>
+      <g class="seat">
+        <rect x="42" y="183" width="96" height="34" rx="2"></rect>
+        <text x="90" y="205" text-anchor="middle" font-size="13">通訳・随員</text>
+      </g>
+      <g class="seat">
+        <rect x="422" y="183" width="96" height="34" rx="2"></rect>
+        <text x="470" y="205" text-anchor="middle" font-size="13">通訳・随員</text>
+      </g>
+      <g class="seat">
+        <rect x="98" y="285" width="96" height="34" rx="2"></rect>
+        <text x="146" y="307" text-anchor="middle" font-size="13">客側 ④</text>
+      </g>
+      <g class="seat">
+        <rect x="366" y="285" width="96" height="34" rx="2"></rect>
+        <text x="414" y="307" text-anchor="middle" font-size="13">客側 ③</text>
+      </g>
+      <g class="seat">
+        <rect x="232" y="328" width="96" height="34" rx="2"></rect>
+        <text x="280" y="350" text-anchor="middle" font-size="13">副主人</text>
+      </g>
+
+      <!-- door / wall -->
+      <path class="wall" d="M 60 412 L 232 412"></path>
+      <path class="wall" d="M 328 412 L 500 412"></path>
+      <text class="svg-label" x="280" y="437" text-anchor="middle" font-size="12">入口（料理・給仕が出入りする側＝下座）</text>
+
+      <!-- annotation -->
+      <text class="svg-note" x="280" y="24" text-anchor="middle" font-size="12.5">入口から最も遠い正面＝上座</text>
+      <text class="svg-label" x="90" y="152" text-anchor="middle" font-size="11">主人から見て右</text>
+      <text class="svg-label" x="470" y="152" text-anchor="middle" font-size="11">主人から見て左</text>
+    </svg>
+    <figcaption><b>円卓の席次。</b>主人（招いた側の最上位者）は入口から最も遠い正面に座り、主賓はその<b>右隣</b>、次賓が左隣。副主人は主人の真向かい＝入口に最も近い席に座り、給仕への指示と支払いを引き受ける。招かれた側は<b>勝手に座らず、案内されるまで立って待つ</b>のが安全。</figcaption>
+  </figure>
+
+  <h3>卓上の作法</h3>
+  <ul class="rules">
+    <li><b>主人より先に会場に着く。</b>遅刻は序列の宣言と受け取られる。</li>
+    <li><b>回転台は時計回り。</b>誰かが取っている最中に回さない。主賓には主人が最初のひと箸を取り分けることが多く、取り箸がなくても自分の箸で相手の皿に取り分けるのは親愛の表現として行われる。</li>
+    <li><b>茶碗を持ち上げない。</b>日本式に器を持ち上げて口へ運ぶ所作は中国では一般的でない。箸を飯に立てない、箸で人を指さない、箸で皿を引き寄せない。</li>
+    <li><b>「少し残すのが礼儀」は今は絶対ではない。</b><span class="zh">光盘行动</span>（食べ残し削減運動）以降、完食は歓迎される。ただし主人が大量に注文するのは今ももてなしの指標なので、食べきれなくても謝る必要はない。</li>
+    <li><b>支払いは招いた側。</b>割り勘の申し出は一度だけ形式的に。粘ると相手の面子を削る。返礼は「次はこちらが」と次回に回す。</li>
+    <li><b>締めるのは主人。</b>主賓が立つまで席を立たない。宴席は日本より短く、2時間前後で解散することも多い。</li>
+  </ul>
+</section>
+
+<section id="toast">
+  <div class="sec-head">
+    <h2>五　乾杯と酒</h2>
+    <span class="zh-tag">干杯 · 敬酒</span>
+  </div>
+  <div class="stack">
+    <ul class="rules">
+      <li><b>発声の順は主人 → 主賓 → 以下序列順。</b>指名されたら立ち上がる。短くていい（感謝・今後の協力・相手企業への敬意の三点）。</li>
+      <li><b>グラスの縁は相手より低い位置で当てる。</b>これが敬意の表示。もう一方の手をグラスの底か自分の胸元に添える。</li>
+      <li><b>「<span class="zh">干杯</span>」は文字どおり飲み干す合図。</b>飲み切れないときは「<span class="zh">随意</span>（スイイー＝お好きなだけ）」と添えて口をつける。この一言を知っているだけで場が保つ。</li>
+      <li><b>白酒（<span class="zh">白酒</span>／茅台・五粮液など、アルコール40〜53度）は小さなグラスで何度も回ってくる。</b>一対一の敬酒は断らず、量で調整する。</li>
+    </ul>
+    <div class="callout"><b>飲めない場合は、最初の一杯の前に宣言する。</b>「医師に止められている」「薬を飲んでいる」「明朝の運転がある」は有効で、お茶やソフトドリンクでの返杯も理由を添えれば失礼にならない。まずい対応は、途中まで付き合って中盤で断ること——相手はすでに「飲める人」として場を組み立てており、面子の問題に変わってしまう。</div>
+  </div>
+</section>
+
+<section id="gifts">
+  <div class="sec-head">
+    <h2>六　贈答</h2>
+    <span class="zh-tag">送礼 · 禁忌</span>
+  </div>
+  <div class="stack">
+    <div class="good">
+      <span class="t-label">喜ばれるもの</span>
+      日本の菓子・地方の名産、上質な文具、相手の子ども向けの品。<b>「全員に行き渡る、少額で、公開の場で渡せるもの」が最も安全</b>。包装は赤か金、渡すときは両手。その場で開けないのが従来の作法だが、近年は勧められたら開けてよい。
+    </div>
+    <div class="taboo">
+      <div class="t-label">避けるもの — 同音と連想</div>
+      <ul>
+        <li><b>時計</b>　<span class="zh">送钟 sòng zhōng</span> が <span class="zh">送终</span>（看取り・葬送）と同音。置き時計・掛け時計は絶対に避ける。</li>
+        <li><b>傘</b>　<span class="zh">伞 sǎn</span> が <span class="zh">散</span>（別れる）に通じる。</li>
+        <li><b>梨</b>　<span class="zh">梨 lí</span> が <span class="zh">离</span>（離別）と同音。切り分けて配るのも「<span class="zh">分梨＝分离</span>」。</li>
+        <li><b>緑色の帽子</b>　<span class="zh">戴绿帽子</span> は「妻を寝取られる」の意。</li>
+        <li><b>白・黒の包装、菊、白い花</b>　弔事の色。数字の <span class="num">4</span>（<span class="zh">死</span>と同音）も避け、縁起がよいのは <span class="num">6</span>（<span class="zh">顺</span>＝順調）と <span class="num">8</span>（<span class="zh">发</span>＝発展）。</li>
+        <li><b>高額品・現金（<span class="zh">红包</span>）</b>　公務員・国有企業幹部への贈与は贈収賄規制に直結する。自社の贈答規程と中国側の社内規定の<b>両方</b>を事前に確認し、迷ったら渡さない。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="calendar">
+  <div class="sec-head">
+    <h2>七　時間と連絡</h2>
+    <span class="zh-tag">节假日 · 沟通</span>
+  </div>
+  <div class="table-scroll">
+    <table>
+      <caption>旧暦ベースの祝日は毎年日付が動く。訪中前に当年の公式発表を確認する</caption>
+      <thead>
+        <tr><th>休暇</th><th>時期</th><th>商談への影響</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="term-cell zh">春节<span class="py">春節・旧正月</span></td><td>1〜2月</td><td>最大の休暇。前後2週間は実質停止。直前は「年内に決めたい」圧力が高まり、明けは転職シーズンで担当者が替わる</td></tr>
+        <tr><td class="term-cell zh">清明节<span class="py">清明節</span></td><td>4月上旬</td><td>3連休程度</td></tr>
+        <tr><td class="term-cell zh">劳动节<span class="py">労働節</span></td><td>5月1日〜</td><td>数日〜5連休。移動が集中し出張手配が困難</td></tr>
+        <tr><td class="term-cell zh">端午节 / 中秋节<span class="py">端午節・中秋節</span></td><td>6月頃 / 9〜10月</td><td>各3連休程度。中秋節は月餅の贈答期</td></tr>
+        <tr><td class="term-cell zh">国庆节<span class="py">国慶節</span></td><td>10月1日〜</td><td>約1週間。春節に次ぐ長期休暇</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <ul class="rules" style="margin-top:26px">
+    <li><b>調休（<span class="zh">调休</span>）に注意。</b>連休を作るため前後の土日が出勤日に振り替えられる。「土曜だから休み」の前提で連絡を止めない。</li>
+    <li><b>WeChatは即レス文化。</b>夜も休日もメッセージは届く。こちらの返信が遅いと、案件の優先度が低いと解釈される。長文はファイルで、判断は短文で返す。</li>
+    <li><b>アポは1〜2週間前に、前日に再確認。</b>都市の広さと渋滞を見込み、移動時間は日本の感覚の1.5倍で組む。</li>
+  </ul>
+</section>
+
+<section id="avoid">
+  <div class="sec-head">
+    <h2>八　触れない話題・持ち込まない前提</h2>
+    <span class="zh-tag">禁区</span>
+  </div>
+  <div class="stack">
+    <div class="taboo">
+      <div class="t-label">会話の一線</div>
+      <ul>
+        <li><b>政治体制、台湾・香港・新疆・チベット、歴史認識、領土問題。</b>相手から振られても評価を述べず、「私には分かりません」で話題を移す。同意も反論も、どちらも後で引用される。</li>
+        <li><b>他社・他地域の悪口。</b>同席者の出身地や前職を知らずに踏むことが多い。</li>
+        <li><b>機密情報を移動中・会食中に話さない。</b>車内、ロビー、エレベーターは公共空間。</li>
+        <li><b>撮影。</b>軍・政府施設、空港の保安区域は不可。人物は一声かけてから。</li>
+      </ul>
+    </div>
+    <div class="callout"><b>通信とキャッシュレスは前提が違う。</b>日本で日常的に使うサービスの一部は現地から接続できない。資料はオフラインで持ち、連絡手段はWeChatを含め二重化する。支払いはWeChat PayまたはAlipayが事実上の標準で、現金やクレジットカードだけでは詰まる場面がある。渡航前にアプリの実名認証と決済手段の紐付けを済ませておく。</div>
+  </div>
+</section>
+
+<section id="checklist">
+  <div class="sec-head">
+    <h2>九　出発前チェック</h2>
+    <span class="zh-tag">出差准备</span>
+  </div>
+  <ol class="checklist">
+    <li><span><b>入国要件の確認</b>パスポート残存期間と、当年のビザ要否を渡航直前に公式情報で確認する（措置は変更されうる）</span></li>
+    <li><span><b>名刺</b>裏面に簡体字の社名・肩書。想定人数の3倍</span></li>
+    <li><span><b>WeChat</b>導入・実名認証・決済の紐付けまで日本で完了させる</span></li>
+    <li><span><b>資料</b>オフライン版を端末内に。クラウド前提にしない</span></li>
+    <li><span><b>手土産</b>全員に配れるもの＋主賓用に一段良いものを1点</span></li>
+    <li><span><b>通訳</b>自社手配。用語集と交渉の落としどころを事前共有</span></li>
+    <li><span><b>社内規程</b>贈答・接待の上限額と申請フローを出発前に確認</span></li>
+    <li><span><b>酒の方針</b>飲めない・飲まない場合の伝え方を先に決めておく</span></li>
+  </ol>
+</section>
+
+<footer>
+  作法は相手と場によって変わる。ここにある型は「知らずに踏む地雷」を減らすためのもので、守ることそのものが目的ではない。最も効くのは、相手の名前と肩書を正確に覚え、約束した日に連絡を返すこと。<br>
+  ※ 祝日日程・入国要件・規制の運用は変更されます。渡航前に必ず最新の公式情報をご確認ください。
+</footer>
+
+</div>
